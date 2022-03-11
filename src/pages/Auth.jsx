@@ -7,6 +7,7 @@ import Button from "../components/button/Button";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import useForm from "../hooks/useForm";
+import { register, signin } from "../redux/auth/auth.action";
 
 const defaultOptions1 = {
   loop: true,
@@ -40,8 +41,18 @@ export default function Auth() {
       <div className="AuthRight">
         <h1 className="AuthRightHead">{isSignIn ? "Sign in" : "Register"}</h1>
         <div className="AuthRightBottom">
-          <Input placeholder="Enter username" />
-          <Input placeholder="Enter password" />
+          <Input
+            placeholder="Enter username"
+            value={name}
+            name="name"
+            onChange={handleInputChange}
+          />
+          <Input
+            placeholder="Enter password"
+            value={password}
+            name="password"
+            onChange={handleInputChange}
+          />
           <div className="AuthRightBottomButtons">
             <Button
               color="#fff"
@@ -51,6 +62,12 @@ export default function Auth() {
               c="pointer"
               br="10px"
               m="0px 10px"
+              onClick={(e) => {
+                e.preventDefault();
+                isSignIn
+                  ? dispatch(signin(formData))
+                  : dispatch(register(formData));
+              }}
             >
               {isSignIn ? "signin" : "register"}
             </Button>
