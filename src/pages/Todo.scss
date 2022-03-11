@@ -2,8 +2,10 @@
 
 .Todo {
   align-items: center;
+  background: #c2e1ff;
   @include col;
   width: 100%;
+  min-height: 100vh;
   &Nav {
     margin-top: 1%;
     @include row;
@@ -25,6 +27,38 @@
         font-size: 15px;
         font-style: italic;
         margin-right: 5px;
+      }
+    }
+  }
+  &Section {
+    margin-top: 1%;
+    @include center;
+    width: 98%;
+    @include col;
+    &Top {
+      @include center;
+      width: 100%;
+      &Input {
+        padding: 8px;
+        border-radius: 10px;
+        border: none;
+        margin-right: 2px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    &Bottom {
+      justify-content: center;
+      margin: 2% 0%;
+      width: 80%;
+      @include row;
+      flex-wrap: wrap;
+      @media (max-width: 1000px) {
+        width: 90%;
+      }
+      @media (max-width: 800px) {
+        width: 95%;
       }
     }
   }

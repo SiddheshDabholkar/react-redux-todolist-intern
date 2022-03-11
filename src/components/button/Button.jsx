@@ -31,13 +31,6 @@ export default function Button({
       onClick={onClick}
     >
       <span className="ButtonRow">
-        <span
-          style={{
-            marginRight: children ? "5px" : "0px",
-          }}
-        >
-          {icon && icon}
-        </span>
         <span className="ButtonRowText">{children}</span>
       </span>
     </button>
