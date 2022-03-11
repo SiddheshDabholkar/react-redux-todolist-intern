@@ -1,0 +1,54 @@
+@import "./../mixin";
+
+.Auth {
+  @include row;
+  width: 100%;
+  height: 100vh;
+  @media (max-width: 600px) {
+    @include col;
+  }
+  &Left {
+    width: 50%;
+    @include col;
+    @include center;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+    &Img {
+      min-height: 200px;
+      max-height: 200px;
+    }
+  }
+  &Right {
+    @include col;
+    @include center;
+    align-content: center;
+    width: 50%;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+    &Head {
+      text-align: center;
+    }
+    &Bottom {
+      @include col;
+      @media (max-width: 600px) {
+        width: 90%;
+      }
+      margin-top: 20px;
+      &Buttons {
+        @include row;
+        @include center;
+      }
+      &Links {
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+        @include row;
+        @include center;
+        text-decoration: none;
+        font-size: 12px;
+      }
+    }
+  }
+}

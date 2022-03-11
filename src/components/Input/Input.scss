@@ -1,0 +1,16 @@
+.Input {
+  padding: 15px;
+  font-size: 20px;
+  margin: 10px;
+  color: gray;
+  border-radius: 20px;
+  background: #effaff;
+  border: 0px;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-size: 15px;
+    color: gray;
+  }
+}
