@@ -11,6 +11,7 @@ export const authReducer = (
   state = getInitialState("auth", intialState),
   action
 ) => {
+  console.log("state", state);
   switch (action.type) {
     case REGISTER_USER:
       state.users.push(action.payload);
@@ -39,7 +40,12 @@ export const authReducer = (
       }
     case LOGOUT_USER:
       localStorage.removeItem("auth");
-      return state;
+      const removingUsr = {
+        ...state,
+        isLoggedIn: false,
+        user: {},
+      };
+      return removingUsr;
     default:
       return state;
   }

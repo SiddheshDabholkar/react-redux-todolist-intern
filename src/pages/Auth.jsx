@@ -64,9 +64,12 @@ export default function Auth() {
               m="0px 10px"
               onClick={(e) => {
                 e.preventDefault();
-                isSignIn
-                  ? dispatch(signin(formData))
-                  : dispatch(register(formData));
+                if (isSignIn) {
+                  dispatch(signin(formData));
+                } else {
+                  dispatch(register(formData));
+                  navigate("/auth/signin");
+                }
               }}
             >
               {isSignIn ? "signin" : "register"}
