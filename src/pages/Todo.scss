@@ -1,0 +1,31 @@
+@import "./../mixin";
+
+.Todo {
+  align-items: center;
+  @include col;
+  width: 100%;
+  &Nav {
+    margin-top: 1%;
+    @include row;
+    width: 95%;
+    justify-content: space-between;
+    &Left {
+      width: auto;
+      &Head {
+        color: #000;
+        font-weight: bolder;
+        font-size: 25px;
+        font-style: italic;
+      }
+    }
+    &Right {
+      width: auto;
+      &Span {
+        color: #000;
+        font-size: 15px;
+        font-style: italic;
+        margin-right: 5px;
+      }
+    }
+  }
+}
